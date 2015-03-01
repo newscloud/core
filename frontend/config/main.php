@@ -12,6 +12,14 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
+      'authClientCollection' => [
+              'class' => 'yii\authclient\Collection',
+              'clients' => [
+                  'google' => [
+                      'class' => 'yii\authclient\clients\GoogleOpenId'
+                  ],
+              ],
+          ],    
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
